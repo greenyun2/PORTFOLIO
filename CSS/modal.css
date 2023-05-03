@@ -1,0 +1,428 @@
+/* Modal Common */
+header {
+  border: 2px solid #fff;
+  height: 50px;
+  text-align: center;
+  padding-top: 5px;
+  background-color: #ccc;
+}
+figure.show {
+  display: none;
+}
+/* ### Modal Page_1 ### */
+.modalPage_1 {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: top 0.3s ease-out;
+}
+.modalPage_1.show {
+  top: 0;
+}
+.aboutme {
+  margin: 20vh auto;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+}
+.icon {
+  width: 300px;
+  position: relative;
+  margin-bottom: 10px;
+}
+.icon i {
+  font-size: 30px;
+  margin-right: 20px;
+  position: absolute;
+  left: -60px;
+  top: -10px;
+}
+.icon .info {
+  width: 400px;
+  display: inline-block;
+}
+.icon .info h3 {
+  display: inline-block;
+}
+.icon .info p {
+  float: right;
+}
+
+.about-title {
+  margin: 0 auto;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+
+}
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+}
+.about-img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ### Modal Page_2 ### */
+.modalPage_2 {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  transition: right 0.3s ease-out;
+}
+.modalPage_2.show {
+  right: 0;
+}
+.project-header {
+  margin-bottom: 100px;
+}
+.project_section {
+  border: 1px solid blue;
+  width: 65vw; 
+  height: 50vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  left: 18vw;
+  top: 30vh;
+  z-index: 1; 
+  cursor: pointer; 
+}
+.modalPage_2 article {
+  margin: 0 1vw;
+  width: 150vw;
+  height: 100%;
+  background-color: #f0f7ff;
+  padding: 5vh 30vw 8vh;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  flex-wrap: wrap;
+
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0.6;
+  transform: scale(0.8);
+
+  transition: opacity 1s, transform 1s;
+}
+/* ### Modal Page_3 ### */
+.modalPage_3 {
+  position: fixed;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  height: 100%;
+  transition: bottom 0.3s ease-out;
+}
+.modalPage_3.show {
+  bottom: 0;
+}
+
+.skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 300px;
+  margin: 400px auto;
+}
+.html-css {
+  margin: 56px 0;
+  display: flex;
+  justify-content: center;
+  gap: 56px;
+}
+.html-css_thumb {
+  position: relative;
+}
+.html-css_logo {
+  width: 144px;
+  animation-name: logo-hover;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+@keyframes logo-hover {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+.html-css_thumb::after {
+  content: '';
+  position: absolute;
+  left: calc(50% - 72px);
+  bottom: -24px;
+  width: 144px;
+  height: 10%;
+  background-color: black;
+  border-radius: 50%;
+
+  animation-name: logo-shadow;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+@keyframes logo-shadow {
+  from {
+    opacity: 0.08;
+  }
+  to {
+    opacity: 0.24;
+  }
+}
+.section:hover {
+  transform: scale(1.04);
+}
+.section:hover .html-css_logo {
+  opacity: 1;
+}
+.skills:hover .section:not(:hover) {
+  transform: scale(0.9);
+}
+.skills:hover .section:not(:hover)::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 12px;
+}
+/* ### Modal Page_4 ### */
+.modalPage_4 {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  transition: left 0.3s ease-out;
+}
+.modalPage_4.show {
+  left: 0;
+}
+.modal_contact {
+  margin: 500px auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* #### Slider #### */
+
+.slide_wrapper {
+
+  margin-left: 60px;
+  position: relative;
+  top: 60px;
+  /* 슬라이더 3개의 너비와 마진 * 3 */
+  width: 1890px;
+  margin: 0 auto;
+  height: 600px;
+  overflow: hidden;
+}
+.slides {
+  position: absolute;
+  left: 0; top: 0;
+  /* width: 2610px; */
+  transition:left 0.5s ease-out;
+}
+.slides li {
+  margin-top: 60px;
+}
+.slides li:not(:last-child) {
+  float: left;
+  /* 슬라이더의 마진 */
+  margin-right: 50px;
+}
+/* .slides li:first-child {
+  margin-left: 60px;
+} */
+.slides li img {
+  /* 슬라이더 1개의 너비 */
+  width: 600px;
+  height: inherit;
+  
+}
+.controls {
+  text-align: center;
+  margin-top: 120px;
+}
+.controls span{
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 0 10px;
+}
+/* modal */
+#works_1 {
+  transition: all 0.3s ease-in-out;
+}
+#works_2 {
+  transition: all 0.3s ease-in-out;
+}
+#works_3{
+  transition: all 0.3s ease-in-out;
+}
+#works_4 {
+  transition: all 0.3s ease-in-out;
+}
+#works_5 {
+  transition: all 0.3s ease-in-out;
+}
+#works_6 {
+  transition: all 0.3s ease-in-out;
+}
+#works_7 {
+  transition: all 0.3s ease-in-out;
+}
+#works_8 {
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+
+/* #### modal Page2 Button #### */
+/* Prev Button */
+.modal-btnPrev {
+
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  transform: translate(-20vw, -50%);
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+.modal-btnPrev span {
+  font: 11px/1;
+  color: #222;
+  opacity: 1;
+  transform: translate(30%);
+  transition: 0.5s;
+}
+.modal-btnPrev::before {
+  content: "";
+  background-color: #222;
+  display: block;
+  width: 100%;
+  height: 1px;
+
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform-origin: left center;
+  transform: rotate(-180deg);
+  transition: 0.5s;
+}
+.modal-btnPrev::after {
+  content: "";
+  background-color: #222;
+  display: block;
+  width: 100%;
+  height: 1px;
+
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform-origin: left center;
+  transform: rotate(180deg);
+  transition: 0.5s;
+}
+.modal-btnPrev:hover span {
+  opacity: 0;
+  transform: translateX(100%);
+}
+.modal-btnPrev:hover::before {
+  transform: rotate(-30deg);
+}
+.modal-btnPrev:hover::after {
+  transform: rotate(30deg);
+}
+/* Next Buttons */
+.modal-btnNext {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 20%;
+  right: 40%;
+  transform: translate(20vw, -50%);
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+.modal-btnNext span {
+  font: 11px/1;
+  color: #222;
+  opacity: 1;
+  transform: translateX(-30%);
+  transition: 0.5s;
+}
+.modal-btnNext::before {
+  content: "";
+  background-color: #222;
+  display: block;
+  width: 100%;
+  height: 1px;
+
+  position: absolute;
+  bottom: 50%;
+  left: 0px;
+  transform-origin: right center;
+  transform: rotate(-180deg);
+  transition: 0.5s;
+}
+.modal-btnNext::after {
+  content: "";
+  background-color: #222;
+  display: block;
+  width: 100%;
+  height: 1px;
+
+  position: absolute;
+  bottom: 50%;
+  left: 0px;
+  transform-origin: right center;
+  transform: rotate(180deg);
+  transition: 0.5s;
+}
+.modal-btnNext:hover span {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.modal-btnNext:hover::before {
+  transform: rotate(30deg);
+}
+.modal-btnNext:hover::after {
+  transform: rotate(-30deg);
+} 
+
+
